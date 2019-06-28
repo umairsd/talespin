@@ -1,0 +1,25 @@
+<div class="catalog-item">
+  <time datetime="{{ .PublishDate }}" class="catalog-time">{{ i18n "publishdate" . }}</time>
+  <h1 class="catalog-title">
+    <a href="{{ .RelPermalink }}" class="catalog-title-anchor">
+      <!-- Indicate a linklog -->
+      {{ if isset .Params "external_url" }} &rarr; {{ end }}
+      {{ .Title | markdownify }}
+    </a>
+  </h1>
+  <div class="catalog-line"></div>
+
+  <div>
+    {{ if isset .Params "summary" }}
+      <p>{{ .Params.Summary | markdownify }}</p>
+    {{ else if .Summary}}
+      <p>{{ .Summary }}</p>
+    {{ end }}
+
+    <!-- If the summary is truncated, add a read more link -->
+    {{ if .Truncated }}
+      <a href="{{ .RelPermalink }}">{{ i18n "read-more" }}</a>
+    {{ end }}
+  </div>
+</div>
+

@@ -1,0 +1,22 @@
+<nav class="nav">
+  <div class="nav-container">
+    <a href="{{ "/" | relURL }}">
+      <h2 class="nav-title">{{ .Site.Title }}</h2>
+    </a>
+
+    <ul>
+      <!-- Reads the menu variable from the config.toml -->
+      {{ range .Site.Menus.main }}
+        <li>
+          <a href="{{ .URL }}" title="{{ .Title }}">
+            {{- .Name -}}
+            {{- with .Page -}}
+
+            {{- end -}}
+          </a>
+        </li>
+      {{ end }}
+    </ul>
+
+  </div>
+</nav>

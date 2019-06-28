@@ -1,0 +1,13 @@
+<h1 class="post-title">
+  <!-- `external_url` indicates that this is a linklog. Append a visual indicator to the title -->
+  {{ if isset .Params "external_url" }}
+    <a href="{{ .Params.external_url }}" class="catalog-title-anchor">
+      &rarr; {{ .Title | markdownify }}
+    </a>
+  {{ else }}
+    <a href="{{ .RelPermalink }}" class="catalog-title-anchor">
+      {{ .Title | markdownify }}
+    </a>
+  {{ end}}
+</h1>
+<div class="post-line"></div>

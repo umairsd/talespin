@@ -1,0 +1,21 @@
+<div class="post-info">
+    {{- if .Params.Author }}
+        <span>{{ i18n "writtenBy" }}</span>
+        {{ .Params.Author }}
+    {{- end }}
+
+    {{- if .PublishDate }}
+        <br>
+        <span>{{ i18n "on" }}&nbsp;</span><time datetime="{{ .PublishDate }}">{{ i18n "publishdate" . }}</time>
+    {{- end }}
+
+    <!-- List of categories -->
+    {{- if (isset .Params "categories") and (gt (len .Params.categories) 0) }}
+        <ul class="post-ul">
+        <span>in</span> [
+          {{ range $category := .Params.categories }}
+            <li class="post-li"><a href="/categories/{{ $category }}"> {{ $category }}</a></li>
+          {{ end }}]
+        </ul>
+    {{- end }}
+</div>

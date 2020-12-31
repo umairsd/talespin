@@ -10,7 +10,7 @@
     {{- end }}
 
     <!-- List of categories -->
-    {{- if (isset .Params "categories") and (gt (len .Params.categories) 0) }}
+    {{- if and (isset .Params "categories") (gt (len .Params.categories) 0) }}
         <ul class="post-ul">
         <span>in</span> [
           {{ range $category := .Params.categories }}

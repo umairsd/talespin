@@ -4,7 +4,8 @@
   {{ partial "index/introduction.html" . }}
 
   <div class="catalog">
-    {{ range (.Paginate .Pages).Pages }}
+    {{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
+    {{ range (.Paginate $pages).Pages }}
       {{ .Render "summary" }}
     {{ end }}
   </div>

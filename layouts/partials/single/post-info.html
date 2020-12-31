@@ -10,12 +10,14 @@
     {{- end }}
 
     <!-- List of categories -->
-    {{- if and (isset .Params "categories") (gt (len .Params.categories) 0) }}
-        <ul class="post-ul">
-        <span>in</span> [
-          {{ range $category := .Params.categories }}
-            <li class="post-li"><a href="/categories/{{ $category }}"> {{ $category }}</a></li>
-          {{ end }}]
-        </ul>
+    {{- if (isset .Params "categories") }}
+        {{ if (gt (len .Params.categories) 0) }}
+            <ul class="post-ul">
+            <span>in</span> [
+              {{ range $category := .Params.categories }}
+                <li class="post-li"><a href="/categories/{{ $category }}"> {{ $category }}</a></li>
+              {{ end }}]
+            </ul>
+        {{ end }}
     {{- end }}
 </div>

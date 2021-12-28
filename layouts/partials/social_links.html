@@ -3,24 +3,22 @@
 <div class="social-top">
   <ul class="social-ul">
 
-    {{- range $name, $destination := .Site.Params.social }}
-      {{/* social icons */}}
-      {{- if $name }}
-        {{- $filePath := (print "svg/" $name ".svg") }}
-        {{- if $filePath }}
-          <li class="social-li">
-            <a href="{{ $destination | safeURL }}"
-               rel="me noopener"
-               class = "social-a"
-               title="{{ $name }}"
-               target="_blank">
-              {{ partial $filePath }}
-            </a>
-          </li>
-        {{- end }}
-      {{- end }}
+    {{- range .Site.Params.social.networks }}
+      {{ if .identifer }}
+        {{ $filePath := (print "svg/" .identifer ".svg") }}
+        {{ if $filePath }}
+        <li class="social-li">
+          <a href="{{ .url | safeURL }}"
+             rel="me noopener"
+             class = "social-a"
+             title="{{ .identifer }}"
+             target="_blank">
+            {{ partial $filePath }}
+          </a>
+        </li>
+        {{ end }}
+      {{ end }}
     {{- end }}
 
   </ul>
 </div>
-

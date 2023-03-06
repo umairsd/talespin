@@ -107,7 +107,7 @@ css = ["custom.css", "custom2.css"]
 
 Thanks
 
-- to [Emiel Hollander](https://github.com/EmielH/tale-hugo/") for creating the migrating the original  [Tale theme for Jekyll](https://chesterhow.github.io/tale/).
+- to [Emiel Hollander](https://github.com/EmielH/tale-hugo/") for migrating the original  [Tale theme for Jekyll](https://chesterhow.github.io/tale/).
 
 ## License
 

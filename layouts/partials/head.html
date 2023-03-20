@@ -1,4 +1,8 @@
 <head>
+  {{ if and (hugo.IsProduction) (.Site.Params.googleAnalyticsID) }}
+  {{ partial "analytics_gtag.html" . }}
+  {{ end }}
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   {{- if .IsHome }}

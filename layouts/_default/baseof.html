@@ -1,9 +1,5 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode | default "en" }}">
-  {{ if and (hugo.IsProduction) (.Site.Params.googleAnalyticsID) }}
-  {{ partial "analytics_gtag.html" . }}
-  {{ end }}
-
   {{ partial "head.html" . }}
   <body>
     {{ partial "header.html" . }}

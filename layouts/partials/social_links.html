@@ -9,11 +9,7 @@
         {{ if $filePath }}
         <li class="social-li">
           <a href="{{ .url | safeURL }}"
-             {{ if .disableNoopener }}
-             rel="me"
-             {{ else }}
              rel="me noopener"
-             {{ end }}
              class = "social-a"
              title="{{ .identifer }}"
              target="_blank">

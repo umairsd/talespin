@@ -49,7 +49,6 @@
 
   p {
     margin: 0 0 1rem;
-    text-align: left;
   }
 
   a:hover {
@@ -82,7 +81,8 @@
   }
 
   figure {
-    display: inline-block;
+    display: inline;
+    position: relative;
   }
 
   figcaption {
